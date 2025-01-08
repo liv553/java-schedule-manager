@@ -1,3 +1,5 @@
+package model;
+
 public class Person {
 
     private String email;
@@ -25,7 +27,7 @@ public class Person {
     }
 
     @Override
-    public toString(){
+    public String toString(){
         return "";
     }
 }

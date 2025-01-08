@@ -1,3 +1,5 @@
+package model;
+
 public class Company extends Person {
 
     private String cnpj;

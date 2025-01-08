@@ -1,3 +1,5 @@
-public class AppointmentService {
+package service;
 
+public class AppointmentService {
+    
 }
