@@ -1,18 +1,16 @@
 package service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import model.Appointment;
 
 public class Schedule {
-   private ArrayList<Appointment> appointments;
 
-    public Schedule(){
-        this.appointments = new ArrayList<>();
-    }
+   private ArrayList<Appointment> appointments = new ArrayList<>();
 
-    public ArrayList<Appointment> getAppointments() {
+    
+   public ArrayList<Appointment> getAppointments() {
         return appointments;
     }
 
@@ -31,10 +29,14 @@ public class Schedule {
         
     }
 
-    public LocalDateTime findAppointmentByDate(LocalDateTime localDateTime){
-        for (int i = 0; i < appointments.size(); i++){
-
+    public ArrayList<Appointment> findAppointmentByDate(LocalDate date){
+        ArrayList<Appointment> matchingAppointments = new ArrayList<>();
+        for (Appointment appointment : appointments){
+            if (appointment.getDateTime().toLocalDate().equals(date)) {
+                matchingAppointments.add(appointment);
+            }
         }
-        return 
+        return matchingAppointments;
+
     }
 }
