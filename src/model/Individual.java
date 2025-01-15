@@ -21,4 +21,9 @@ public class Individual extends Person {
     public String getCpf() {
         return cpf;
     }
+
+    @Override
+    public String toString(){
+        return name + "'s Appointment " + "\nEmail: " + email + "\n CPF: " + cpf;
+    }
 }

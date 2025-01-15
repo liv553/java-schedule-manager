@@ -2,8 +2,8 @@ package model;
 
 public class Person {
 
-    private String email;
-    private String name;
+    protected String email;
+    protected String name;
 
     public Person(String email, String name) {
         this.email = email;
@@ -26,8 +26,5 @@ public class Person {
         this.name = name;
     }
 
-    @Override
-    public String toString(){
-        return "";
-    }
+    
 }

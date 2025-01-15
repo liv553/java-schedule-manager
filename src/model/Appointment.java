@@ -38,7 +38,15 @@ public class Appointment {
         this.person = person;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Date/Time: " 
+        + dateTime
+        + " - Description: "
+        + description
+        + " - Person: "
+        + person;
+    }
 
 }
 

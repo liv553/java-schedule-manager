@@ -1,16 +1,21 @@
 package service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import model.Appointment;
 
 public class Schedule {
 
-   private ArrayList<Appointment> appointments = new ArrayList<>();
+   private List<Appointment> appointments;
 
     
-   public ArrayList<Appointment> getAppointments() {
+    public Schedule(List<Appointment> appointments) {
+    this.appointments = appointments;
+    }
+
+    public List<Appointment> getAppointments() {
         return appointments;
     }
 
@@ -23,20 +28,10 @@ public class Schedule {
     }
 
     public void listAppointments() {
-        for (int i = 0; i < appointments.size(); i++){
-            System.out.println(appointments.get(i));
-        }
-        
+        for (Appointment obj : appointments) System.out.println(obj);
     }
 
-    public ArrayList<Appointment> findAppointmentByDate(LocalDate date){
-        ArrayList<Appointment> matchingAppointments = new ArrayList<>();
-        for (Appointment appointment : appointments){
-            if (appointment.getDateTime().toLocalDate().equals(date)) {
-                matchingAppointments.add(appointment);
-            }
-        }
-        return matchingAppointments;
-
+    public List<Appointment> findAppointmentByDate(LocalDate date){
+        return appointments.stream().filter(appointment -> appointment.getDateTime().toLocalDate().equals(date)).collect(Collectors.toList());
     }
 }

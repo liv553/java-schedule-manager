@@ -22,4 +22,9 @@ public class Company extends Person {
         return cnpj;
     }
 
+    @Override
+    public String toString(){
+        return name + "'s Appointment " + "\nEmail: " + email + "\n CNPJ: " + cnpj;
+    }
+
 }
